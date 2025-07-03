@@ -3,7 +3,7 @@
 
 enum connective {
     PROPOSITION,
-    NOT
+    NOT,
     AND,
     OR,
     NAND,
@@ -12,6 +12,6 @@ enum connective {
     XNOR,
     IMPLY,
     NIMPLY
-}
+};
 
 #endif

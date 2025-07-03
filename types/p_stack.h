@@ -1,5 +1,5 @@
-#ifndef p_stack
-#define p_stack
+#ifndef p_stack_h
+#define p_stack_h
 
 #include <stdbool.h>
 
@@ -15,7 +15,7 @@ typedef struct ps_node {
     struct ps_node* parent;
 } ps_node;
 
-typedef struct {
+typedef struct p_stack {
     id* ids;
 
     a_proposition* propositions;
@@ -23,25 +23,10 @@ typedef struct {
 
     bool truth;
 
-    p_stack* parent;
+    struct p_node* parent;
 } p_stack;
 
-void ps_get() {
-    ps_node result[top -> number];
-
-    ps_node current;
-    if (top == NULL) {
-        return {NULL};
-    } else {
-        current = top;
-        for (int i = 0; result == 0; i--) {
-            result[i] = current;
-            current = current -> parent;
-        }
-    }
-}
-
-void ps_push(ps_node current) {
+void ps_push(ps_node* top, ps_node* current) {
     if (top == NULL) {
         top = current;
         top -> parent = NULL;
@@ -51,7 +36,7 @@ void ps_push(ps_node current) {
     }
 }
 
-void ps_pop() {
+void ps_pop(ps_node* top) {
     if (top != NULL)
         top = top -> parent;
 }
