@@ -53,3 +53,7 @@ Mkfile.old
 dkms.conf
 
 *.nix
+
+main
+main-debug
+Makefile
